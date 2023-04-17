@@ -5,52 +5,54 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<link rel="stylesheet" href="dist/style.css">
-	<title>To Dо</title>
+	<title>To-dо list</title>
 </head>
 
 <body>
-	<div class="container">
+	<div class="task-board">
 
-		<div class="title">To Dо</div>
-		<div class="subtitle">Task list</div>
+		<div class="task-board_content">
+			<div class="info-block">
+				<div class="title">To-do list task</div>
+			</div>
 
-		<div class="task-active-card">
+			<div class="task-active-card">
 
-			<ul id="list-group" class="list-group">
-				<li id="empty-list-item" class="list-group-item">Список дел пуст</li>
+				<ul id="list-group" class="list-group">
+					<li id="empty-list-item" class="list-group-item">To-do list is empty</li>
 
-				<li class="list-group-item">
-					<span contenteditable="true" class="task-title">Купить молоко</span>
-					<div>
-						<button type="button" data-action="ready" class="btn-ready">Готово</button>
-						<button type="button" data-action="delete-task" class="btn-delete">Удалить</button>
-					</div>
-				</li>
+					<li class="list-group-item">
+						<span contenteditable="true" class="task-title">Купить молоко</span>
+						<div>
+							<button type="button" data-action="ready" class="btn-ready item-buttons">Ready</button>
+							<button type="button" data-action="delete-task" class="btn-delete item-buttons">Delete</button>
+						</div>
+					</li>
 
-				<li class="list-group-item">
-					<span contenteditable="true" class="task-title done">Купить хлеб</span>
-					<div>
-						<button type="button" data-action="ready" class="btn-ready">Готово</button>
-						<button type="button" data-action="delete-task" class="btn-delete">Удалить</button>
-					</div>
-				</li>
-			</ul>
+					<li class="list-group-item">
+						<span contenteditable="true" class="task-title done">Купить хлеб</span>
+						<div>
+							<button type="button" data-action="ready" class="btn-ready  item-buttons">Ready</button>
+							<button type="button" data-action="delete-task" class="btn-delete  item-buttons">Delete</button>
+						</div>
+					</li>
+				</ul>
 
-		</div>
+			</div>
 
-		<div class="task-adding-card">
-			<div class="card-header">Добавить новую задачу</div>
-			<div class="card-body">
-				<form id="newTaskForm" class="task-form">
-					<div class="form-group">
-						<input type="text" class="form-control" id="addNewTask" placeholder="Текст задачи" autofocus
-							required />
-					</div>
-					<button type="submit" class="add-task">Добавить</button>
-				</form>
+			<div class="task-adding-card">
+				<div class="card-header">Add a new task</div>
+				<div class="card-body">
+					<form id="newTaskForm" class="task-form">
+						<div class="form-group">
+							<input type="text" class="form-control" id="addNewTask" placeholder="Текст задачи" autofocus
+								required />
+						</div>
+						<button type="submit" class="add-task">Add</button>
+					</form>
+				</div>
 			</div>
 		</div>
-
 	</div>
 
 	<script type="module" src="dist/bundle.js"></script>

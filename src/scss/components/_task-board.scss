@@ -1,0 +1,145 @@
+.task-board {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .task-board_content {
+        width: 100%;
+        max-width: 600px;
+        padding: 0 1rem;
+
+        .info-block {
+            border-radius: $radii;
+            background-color: $blue-100;
+            font-weight: $weight-bold;
+            color: white;
+            padding: 1.5rem 1rem;
+            box-shadow: $shadow;
+
+
+            .title {}
+        }
+
+
+        .task-active-card {
+            border-radius: $radii;
+            background-color: $green-100;
+            color: white;
+            font-weight: $weight-bold;
+            box-shadow: $shadow;
+            padding: 1.5rem 1.5rem;
+            margin-top: 1.3rem;
+
+            .list-group {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+
+                .list-group-item {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 0.5rem;
+
+                    .task-title {
+
+                        &.done {
+                            text-decoration: line-through;
+                            color: black;
+                        }
+                    }
+
+                    .item-buttons {
+                        cursor: pointer;
+                        font-weight: bold;
+                        color: $blue-400;
+                        border-radius: $radii;
+                        border: 0.2rem solid $blue-400;
+                        padding: 0.4rem 0.3rem;
+                        transition: transform 2ms;
+                        transition: background-color 1s ease-out 0.5ms;
+
+                    }
+
+                    .btn-ready {
+                        &:hover {
+                            background-color: $blue-400;
+                            transform: translateY(-3px);
+                            color: white;
+                        }
+                    }
+
+                    .btn-delete {
+                        &:hover {
+                            background-color: $red-300;
+                            transform: translateY(-3px);
+                            color: white;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .task-adding-card {
+            background-color: $red-100;
+            color: white;
+            border-radius: $radii;
+            font-weight: $weight-bold;
+            box-shadow: $shadow;
+            padding: 1.5rem 1rem;
+            margin-top: 1.3rem;
+
+
+            .card-header {
+                display: flex;
+                justify-content: center;
+            }
+
+            .card-body {
+                margin-top: 1rem;
+
+                .task-form {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    .form-group {
+                        width: 100%;
+                        padding-right: 1rem;
+
+                        .form-control {
+                            width: 100%;
+                            line-height: 1.8rem;
+                            border-radius: $radii;
+                            border: 0.2rem solid $blue-400;
+                            padding: 0 0.6rem;
+                            outline: none;
+
+                        }
+                    }
+
+                    .add-task {
+                        cursor: pointer;
+                        font-weight: bold;
+                        color: $blue-400;
+                        border-radius: $radii;
+                        border: 0.2rem solid $blue-400;
+                        padding: 0.4rem 2.3rem;
+                        transition: transform 2ms;
+                        transition: background-color 1s ease-out 0.5ms;
+
+                        &:hover {
+                            background-color: $blue-400;
+                            transform: translateY(-3px);
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
