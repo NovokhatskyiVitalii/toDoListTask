@@ -1,0 +1,32 @@
+.container {
+    .title{}
+    .subtitle{}
+
+    .task-active-card{
+        .list-group{
+            .list-group-item{
+
+                .task-title{
+                
+                  &.done{}  
+                }
+                .btn-ready{}
+                .btn-delete{}
+            }
+
+        }
+    }
+    .task-adding-card{
+        .card-header{}
+        .card-body{
+            .task-form{
+                .form-group{
+                    .form-control{} 
+                }
+
+                .add-task{}
+            }
+        }
+    }
+
+}
