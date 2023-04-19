@@ -19,7 +19,9 @@
             box-shadow: $shadow;
 
 
-            .title {}
+            .title {
+                text-align: center;
+            }
         }
 
 
@@ -32,6 +34,7 @@
             padding: 1.5rem 1.5rem;
             margin-top: 1.3rem;
 
+
             .list-group {
                 margin: 0;
                 padding: 0;
@@ -42,6 +45,14 @@
                     justify-content: space-between;
                     align-items: center;
                     margin-top: 0.5rem;
+
+                    .empty-text {
+                        margin: 0 auto;
+
+                        &.none {
+                            display: none;
+                        }
+                    }
 
                     .task-title {
 
@@ -63,7 +74,7 @@
 
                     }
 
-                    .btn-ready {
+                    .btn-done {
                         &:hover {
                             background-color: $blue-400;
                             transform: translateY(-3px);
@@ -94,8 +105,7 @@
 
 
             .card-header {
-                display: flex;
-                justify-content: center;
+                text-align: center;
             }
 
             .card-body {

@@ -18,24 +18,27 @@
 
 			<div class="task-active-card">
 
-				<ul id="list-group" class="list-group">
-					<li id="empty-list-item" class="list-group-item">To-do list is empty</li>
-
+				<ul id="task-list" class="list-group">
 					<li class="list-group-item">
+						<div id="empty-list" class="empty-text">To-do list is empty</div>
+					</li>
+
+
+					<!-- <li class="list-group-item">
 						<span contenteditable="true" class="task-title">Купить молоко</span>
 						<div>
 							<button type="button" data-action="ready" class="btn-ready item-buttons">Ready</button>
-							<button type="button" data-action="delete-task" class="btn-delete item-buttons">Delete</button>
+							<button type="button" data-action="delete" class="btn-delete item-buttons">Delete</button>
 						</div>
 					</li>
 
 					<li class="list-group-item">
 						<span contenteditable="true" class="task-title done">Купить хлеб</span>
 						<div>
-							<button type="button" data-action="ready" class="btn-ready  item-buttons">Ready</button>
-							<button type="button" data-action="delete-task" class="btn-delete  item-buttons">Delete</button>
+							<button type="button" data-action="done" class="btn-ready  item-buttons">Ready</button>
+							<button type="button" data-action="delete" class="btn-delete  item-buttons">Delete</button>
 						</div>
-					</li>
+					</li> -->
 				</ul>
 
 			</div>
@@ -43,9 +46,9 @@
 			<div class="task-adding-card">
 				<div class="card-header">Add a new task</div>
 				<div class="card-body">
-					<form id="newTaskForm" class="task-form">
+					<form id="form" class="task-form">
 						<div class="form-group">
-							<input type="text" class="form-control" id="addNewTask" placeholder="Текст задачи" autofocus
+							<input type="text" class="form-control" id="task-input" placeholder="Текст задачи" autofocus
 								required />
 						</div>
 						<button type="submit" class="add-task">Add</button>
