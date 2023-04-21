@@ -16,7 +16,9 @@
             font-weight: $weight-bold;
             color: white;
             padding: 1.5rem 1rem;
-            box-shadow: $shadow;
+            box-shadow:  -9px -10px $orange-100,
+            9px 10px #a3a3a3;
+            border: $br-color;
 
 
             .title {
@@ -30,9 +32,10 @@
             background-color: $green-100;
             color: white;
             font-weight: $weight-bold;
-            box-shadow: $shadow;
+            box-shadow: $box-shad;
+            border: $br-color;
             padding: 1.5rem 1.5rem;
-            margin-top: 1.3rem;
+            margin-top: 1.7rem;
 
 
             .list-group {
@@ -99,9 +102,10 @@
             color: white;
             border-radius: $radii;
             font-weight: $weight-bold;
-            box-shadow: $shadow;
+            box-shadow: $box-shad;
+            border: $br-color;
             padding: 1.5rem 1rem;
-            margin-top: 1.3rem;
+            margin-top: 1.7rem;
 
 
             .card-header {
