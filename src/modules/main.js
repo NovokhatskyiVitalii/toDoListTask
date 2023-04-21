@@ -5,6 +5,27 @@ const main = () => {
     const emptyList = document.querySelector("#empty-list");
 
     let tasks = [];
+
+    if (localStorage.getItem('tasks')) {
+        tasks = JSON.parse(localStorage.getItem('tasks'));
+    }
+    
+    tasks.forEach((task) => {
+        const cssClass = task.done ? "task-title done" : "task-title";
+
+        const taskHTML = `
+        <li id="${task.id}" class="list-group-item">
+                <span class="${cssClass}">${task.text}</span>
+            <div>
+                <button type="button" data-action="done" class="btn-done item-buttons">Done</button>
+                <button type="button" data-action="delete" class="btn-delete item-buttons">Delete</button>
+            </div>
+        </li>`;
+
+        taskList.insertAdjacentHTML("beforeend", taskHTML);
+
+    })
+
     checkEmptyList();
 
     form.addEventListener("submit", addTask);
@@ -23,6 +44,8 @@ const main = () => {
         };
 
         tasks.push(newTask);
+
+        saveToLocalStorage();
 
         const cssClass = newTask.done ? "task-title done" : "task-title";
 
@@ -53,6 +76,8 @@ const main = () => {
         
         tasks = tasks.filter((task) => task.id !== id);
 
+        saveToLocalStorage();
+
         parenNode.remove();
 
         checkEmptyList();
@@ -67,7 +92,9 @@ const main = () => {
 
         const id = Number(parenNode.id);
         const task = tasks.find((task) => task.id === id);
-        task.done = !task.done
+        task.done = !task.done;
+
+        saveToLocalStorage();
 
         const taskTitle = parenNode.querySelector(".task-title");
         taskTitle.classList.toggle("done");
@@ -88,6 +115,10 @@ const main = () => {
             emptyListElement ? emptyListElement.remove() : null;
 
         }
+    }
+
+    function saveToLocalStorage() {
+        localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 };
 
