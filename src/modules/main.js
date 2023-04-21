@@ -8,23 +8,9 @@ const main = () => {
 
     if (localStorage.getItem('tasks')) {
         tasks = JSON.parse(localStorage.getItem('tasks'));
+        tasks.forEach((task) => renderTask(task));
     }
     
-    tasks.forEach((task) => {
-        const cssClass = task.done ? "task-title done" : "task-title";
-
-        const taskHTML = `
-        <li id="${task.id}" class="list-group-item">
-                <span class="${cssClass}">${task.text}</span>
-            <div>
-                <button type="button" data-action="done" class="btn-done item-buttons">Done</button>
-                <button type="button" data-action="delete" class="btn-delete item-buttons">Delete</button>
-            </div>
-        </li>`;
-
-        taskList.insertAdjacentHTML("beforeend", taskHTML);
-
-    })
 
     checkEmptyList();
 
@@ -47,19 +33,8 @@ const main = () => {
 
         saveToLocalStorage();
 
-        const cssClass = newTask.done ? "task-title done" : "task-title";
-
-        const taskHTML = `
-        <li id="${newTask.id}" class="list-group-item">
-                <span class="${cssClass}">${newTask.text}</span>
-            <div>
-                <button type="button" data-action="done" class="btn-done item-buttons">Done</button>
-                <button type="button" data-action="delete" class="btn-delete item-buttons">Delete</button>
-            </div>
-        </li>`;
-
-        taskList.insertAdjacentHTML("beforeend", taskHTML);
-
+        renderTask(newTask);
+        
         taskInput.value = "";
         taskInput.focus();
 
@@ -119,6 +94,23 @@ const main = () => {
 
     function saveToLocalStorage() {
         localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    function renderTask(task) {
+        const cssClass = task.done ? "task-title done" : "task-title";
+
+        const taskHTML = `
+        <li id="${task.id}" class="list-group-item">
+                <span class="${cssClass}">${task.text}</span>
+            <div>
+                <button type="button" data-action="done" class="btn-done item-buttons">Done</button>
+                <button type="button" data-action="delete" class="btn-delete item-buttons">Delete</button>
+            </div>
+        </li>`;
+
+        taskList.insertAdjacentHTML("beforeend", taskHTML);
+
+
     }
 };
 
